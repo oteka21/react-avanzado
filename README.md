@@ -38,7 +38,7 @@ Este nos crea el html automáticamente cada vez que hace Build de nuestra aplica
 
 Esto require una configuracion en el webpack.config.js
 
-`    module.exports = {
+```module.exports = {
     ...
     module: {
         rules: [
@@ -56,4 +56,4 @@ Esto require una configuracion en el webpack.config.js
         ]
     },
     ...
-}    `
+}```
