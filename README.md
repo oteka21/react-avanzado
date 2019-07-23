@@ -61,3 +61,13 @@ module.exports = {
     ...
 }
 ```
+
+# deploy con now.js
+
+now es una poderosa herramienta para hacer deploy de nuestra aplicacion de una manera muy sencilla
+
+> Para tener en cuenta
+
+* crear una cuenta en now.js
+* instalar now-cli 
+* configurar nen el proyecto el deply con now 
