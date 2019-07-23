@@ -11,7 +11,7 @@ Para iniciar un proyecto es necesario crear la carpeta del proyecto e inicializa
 Es importante crear el archivo webpack.config.js 
 
 
-`    
+```
 module.exports = {
     output: {
         filename: 'app.bundle.js'
@@ -21,7 +21,9 @@ module.exports = {
             template: './src/index.html'
         })
     ]
-}    `
+}
+```
+
 
 ## Opcional 
 
