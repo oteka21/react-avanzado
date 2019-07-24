@@ -76,3 +76,21 @@ now es una poderosa herramienta para hacer deploy de nuestra aplicacion de una m
 ## Styled-components
 
 En este curso se utilizará styled-components 
+
+La forma de agregar estilos globales con styled-components es de la siguiente manera:
+
+```
+import { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyle = createGlobalStyle`
+    html{
+        box-sizing: border-box;
+        font-family: syste-ui;
+    }
+    *, *:before, *:after{
+        box-sizing: inherit;
+    }
+`
+```
+
+Así importando el componente GlobalStyle desde nuestra app ya podemos agregar estos estilos.

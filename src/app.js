@@ -1,6 +1,12 @@
-import React from 'react'
-import { Category } from './components/category'
+import React, { Fragment } from 'react'
+import { ListOfCategories } from './components/ListOfCategories'
+import { GlobalStyle } from './GlobalStyles'
+import { ListOfPhotoCards } from './components/ListOfPhotoCards'
 
 export function App () {
-  return <Category />
+  return <Fragment>
+    <GlobalStyle />
+    <ListOfCategories />
+    <ListOfPhotoCards />
+  </Fragment>
 }
