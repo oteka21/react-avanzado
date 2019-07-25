@@ -1,11 +1,12 @@
 import React from 'react'
 import { PhotoCard } from '../PhotoCard'
+import { photos } from '../../../api/db.json'
 
 export function ListOfPhotoCards () {
   return (
     <ul>
       {
-        [1, 2, 3, 4, 5].map(photocard => <PhotoCard key={photocard} />)
+        photos.map(photo => <PhotoCard key={photo.id} {...photo} />)
       }
     </ul>
   )
