@@ -94,3 +94,49 @@ export const GlobalStyle = createGlobalStyle`
 ```
 
 Así importando el componente GlobalStyle desde nuestra app ya podemos agregar estos estilos.
+
+## Animaciones en styled-components
+
+en react se pueden utilizar animaciones importando la funcion keyframes de styled-components y creando un keyframe como se utiliza comunmente en css
+
+```
+
+import styled, { keyframes } from 'styled-componts'
+
+const animation = keyframes`
+    from {
+       
+    }
+    to{
+        transform; rotate(60deg)
+    }
+`
+
+const AnimatedComponent = styled.div`
+    animation: 1s ${animation} ease;
+`
+
+```
+
+> tambien se pueden crear animaciones reutilizables de la siguiente manera
+
+```
+import { keyframes, css } from 'styled-componts'
+
+const animation = keyframes`
+    from {
+       
+    }
+    to{
+        transform; rotate(60deg)
+    }
+`
+export const rotate = ({time = '1s', type = 'ease'} = {}) => css`
+    animation: ${time} ${animation} $type
+`
+```
+
+
+
+
+
