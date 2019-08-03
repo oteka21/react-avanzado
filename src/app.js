@@ -9,6 +9,6 @@ export function App () {
     <Logo />
     <GlobalStyle />
     <ListOfCategories />
-    <ListOfPhotoCards />
+    <ListOfPhotoCards categoryId={1} />
   </Fragment>
 }
