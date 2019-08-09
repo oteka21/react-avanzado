@@ -6,7 +6,7 @@ import { ApolloProvider } from 'react-apollo'
 import { App } from './app'
 
 const client = new ApolloClient({
-  uri: 'https://petgram-server.midudev.now.sh/graphql'
+  uri: 'https://petgram-server-mdp4qobnn.now.sh/graphql'
 })
 
 render(
