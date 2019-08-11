@@ -20,6 +20,5 @@ function Provider ({ children }) {
 
 export default {
   Provider,
-  Consumer: Context.Consumer,
-  Context
+  Consumer: Context.Consumer
 }
