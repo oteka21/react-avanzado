@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
+import Context from './context'
 
 import { App } from './app'
 
@@ -10,7 +11,9 @@ const client = new ApolloClient({
 })
 
 render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>
+  <Context.Provider>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </Context.Provider>
   , document.getElementById('app'))
