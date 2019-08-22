@@ -11,7 +11,9 @@ export const Input = styled.input`
     padding: 8px 4px;
     display: block;
     width: 100%;
-
+    &[disabled]{
+        opacity: .3;
+    }
 `
 
 export const Button = styled.button`
@@ -23,10 +25,18 @@ export const Button = styled.button`
     width: 100%;
     text-align: center;
     font-weight: bold;
+    &[disabled]{
+        opacity: .3;
+    }
 `
 
 export const Title = styled.h2`
     padding: 0 20px;
     font-weight: 500;
     color: rgb(31, 33, 35);
+`
+
+export const Error = styled.span`
+    font-size: 14;
+    color: red;
 `
