@@ -2,7 +2,7 @@ import React from 'react'
 import { FavsWithQuery } from '../containers/GetFavorites'
 import { Layout } from '../components/Layout'
 
-export function Favs () {
+export default () => {
   return <Layout title='Tus favoritos' subtitle='Todas tus mascotas favoritas'>
     <h1>Favs</h1>
     <FavsWithQuery />
