@@ -136,7 +136,77 @@ export const rotate = ({time = '1s', type = 'ease'} = {}) => css`
 `
 ```
 
+##  Utilizando Graphql para fetching de datos 
 
+Una de las formas mas populares de integrar Graphql con aplicaciones en react es utilizando las siguientes dependencias:
 
+* apollo-boost: Este nos permite inicializar una conexion con un servidor de Graphql de una manera facil.
 
+* react-apollo: Esta es la integracion de apollo con react.
+
+* graphql: contiene el core de esta dependencia.
+
+existen tres formas de integrar esta funcionalidad en nustras aplicaciones de react 
+
+* HOC: high order components.
+* Render props.
+* Hoks. 
+
+### HOC 
+
+```
+import { graphql } from 'react-apollo'
+import { gql } from 'apollo-boost'
+
+const GET_PHOTOS = gql`
+
+`
+
+export const withPhotos = graphql(GET_PHOTOS)
+
+```
+
+De esta forma envolvemos en withPhotos a el componente que le queramos inyectar los datos que vienen de la query.
+
+### Render props 
+
+```
+import React from 'react'
+import { MyComponent } from './components/myComponent'
+import { gql } from 'apollo-boost'
+import { Query } from 'react-apollo'
+
+const GET_SINGLE_PHOTO = gql`
+query getSinglePhoto($id:ID!){
+    photo(id:$id){
+      id
+      categoryId
+      src
+      likes
+      userId
+      liked
+    }
+  }
+`
+
+// Tener en cuenta que esta query resibe una id
+
+export const ComponentWithQuery = ({ id })=> (
+    <Query query={GET_SINGLE_PHOTO} variables={{ id }}>
+        {
+            ({loading, error, data})=> {
+                if (loading){
+                    return <h1>Loading...</h1>
+                }
+                if (error){
+                    return <h1>There is an error!!</h1>
+                }
+                const { photo = {} } = data
+                return <MyComponent {...photo}>
+            }
+        }
+    </Query>
+)
+
+```
 
