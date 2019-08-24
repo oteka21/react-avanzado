@@ -150,7 +150,7 @@ existen tres formas de integrar esta funcionalidad en nustras aplicaciones de re
 
 * HOC: high order components.
 * Render props.
-* Hoks. 
+* Hooks. 
 
 ### HOC 
 
@@ -159,7 +159,16 @@ import { graphql } from 'react-apollo'
 import { gql } from 'apollo-boost'
 
 const GET_PHOTOS = gql`
-
+    query getPhotos($categoryId: ID){
+  photos(categoryId: $categoryId){
+    id
+    categoryId
+    src
+    likes
+    userId
+    liked
+  }
+}
 `
 
 export const withPhotos = graphql(GET_PHOTOS)
@@ -209,4 +218,31 @@ export const ComponentWithQuery = ({ id })=> (
 )
 
 ```
+
+### Hoocks
+
+```
+import { useQuery } from 'react-apollo-hooks'
+import gql from 'graphql-tag'
+
+const getPhotos = gql`
+  query getPhotos($categoryId: ID) {
+    photos(categoryId: $categoryId) {
+      id
+      categoryId
+      src
+      likes
+      userId
+      liked
+    }
+  }
+`
+
+export const useGetPhotos = categoryId => {
+  const { loading, data, error } = useQuery(getPhotos, { variables: { categoryId } })
+  return { loading, data, error }
+}
+
+```
+
 
