@@ -11,7 +11,7 @@ Para iniciar un proyecto es necesario crear la carpeta del proyecto e inicializa
 Es importante crear el archivo webpack.config.js 
 
 
-```
+```javascript
 module.exports = {
     output: {
         filename: 'app.bundle.js'
@@ -40,7 +40,7 @@ Este nos crea el html automáticamente cada vez que hace Build de nuestra aplica
 
 Esto require una configuracion en el webpack.config.js
 
-```
+```javascript
 module.exports = {
     ...
     module: {
@@ -79,7 +79,7 @@ En este curso se utilizará styled-components
 
 La forma de agregar estilos globales con styled-components es de la siguiente manera:
 
-```
+```javascript
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -99,7 +99,7 @@ Así importando el componente GlobalStyle desde nuestra app ya podemos agregar e
 
 en react se pueden utilizar animaciones importando la funcion keyframes de styled-components y creando un keyframe como se utiliza comunmente en css
 
-```
+```javascript
 
 import styled, { keyframes } from 'styled-componts'
 
@@ -120,7 +120,7 @@ const AnimatedComponent = styled.div`
 
 > tambien se pueden crear animaciones reutilizables de la siguiente manera
 
-```
+```javascript
 import { keyframes, css } from 'styled-componts'
 
 const animation = keyframes`
@@ -154,7 +154,7 @@ existen tres formas de integrar esta funcionalidad en nustras aplicaciones de re
 
 ### HOC 
 
-```
+```javascript
 import { graphql } from 'react-apollo'
 import { gql } from 'apollo-boost'
 
@@ -179,7 +179,7 @@ De esta forma envolvemos en withPhotos a el componente que le queramos inyectar 
 
 ### Render props 
 
-```
+```javascript
 import React from 'react'
 import { MyComponent } from './components/myComponent'
 import { gql } from 'apollo-boost'
@@ -221,7 +221,7 @@ export const ComponentWithQuery = ({ id })=> (
 
 ### Hoocks
 
-```
+```javascript
 import { useQuery } from 'react-apollo-hooks'
 import gql from 'graphql-tag'
 
